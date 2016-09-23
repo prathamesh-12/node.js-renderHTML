@@ -8,8 +8,12 @@ var fs = require('fs');           // fs: fileSystem module is added to load the 
 http.createServer(onRequest).listen(8000);
 
 function onRequest(request, response) {
-	response.writeHead(200, {'Content-type' : 'text/html'});     // content-type changed to text/html as we load html file
-	fs.readFile('./index.html', null, function(errorResp, successResp) {   // fs.readFile(path, optional options, callback)
+	response.writeHead(200, {'Content-type' : 'text/html'});     
+	// <span style="color: blue">content-type changed to text/html as we load html file</span><br>
+	
+	
+	fs.readFile('./index.html', null, function(errorResp, successResp) {   
+	// <span style="color: blue">fs.readFile(path, optional options, callback) {} </span>
 		if (errorResp) {
 			response.writeHead(404);
 			response.write("File Not Found");
